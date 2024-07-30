@@ -19,9 +19,50 @@ The project uses the `facebook/bart-large-cnn` model, a pre-trained BART model f
 - **psutil**: To monitor resource usage and prevent memory leaks.
 - **memory-profiler**: To profile memory usage in the Flask application.
 
+## Approach
+
+### Initial Setup
+
+1. **System Requirements**: Ensure the system meets the necessary requirements for Docker Desktop, including Windows 10 64-bit with Pro, Enterprise, or Education editions, and virtualization enabled in the BIOS.
+
+2. **Installation**:
+   - **WSL 2**: Enable Windows Subsystem for Linux 2.
+   - **Docker Desktop**: Install Docker Desktop with the WSL 2 backend.
+
+### Configuration
+
+1. **Docker Desktop Settings**:
+   - Configure Docker Desktop to use the WSL 2 based engine.
+   - Enable WSL integration for the installed Linux distributions.
+   - Adjust resource limits (CPU, Memory, Swap) as needed.
+
+2. **Testing**:
+   - Create a simple Dockerfile and test building and running Docker containers.
+   - Verify connectivity between the Flask backend and React frontend.
+
+### Application Setup
+
+1. **Flask Backend**:
+   - Set up a Flask application with endpoints for file upload and text summarization.
+   - Ensure proper configuration of CORS and logging for debugging.
+
+2. **React Frontend**:
+   - Set up a React application with file upload and text summarization functionality.
+   - Integrate with the Flask backend using Axios for HTTP requests.
+
 ## Challenges and Solutions
 
-### Challenge 1: Docker Desktop Installation Issues
+### Challenge 1: Model Selection
+
+- **Problem**: Determining the best model for text summarization.
+- **Solution**: Considered several models including:
+  - `t5-small`: Good summarization but limited by its smaller size.
+  - `distilbart-cnn-12-6`: Faster inference but slightly lower quality summaries.
+  - `facebook/bart-large-cnn`: Provided the best balance of speed and summary quality.
+  
+  After evaluating the performance and summary quality, we selected `facebook/bart-large-cnn` for its superior summarization capabilities.
+
+### Challenge 2: Docker Desktop Installation Issues
 
 - **Problem**: Docker Desktop was not starting correctly, showing errors related to WSL 2 and virtualization.
 - **Solution**:
@@ -30,7 +71,7 @@ The project uses the `facebook/bart-large-cnn` model, a pre-trained BART model f
   - Reinstalled Docker Desktop with the latest version.
   - Configured Docker Desktop to use the WSL 2 backend and enabled necessary integrations.
 
-### Challenge 2: Flask Server Crashing
+### Challenge 3: Flask Server Crashing
 
 - **Problem**: The Flask server was crashing shortly after starting.
 - **Solution**:
@@ -38,7 +79,7 @@ The project uses the `facebook/bart-large-cnn` model, a pre-trained BART model f
   - Enabled detailed logging to identify and resolve any issues causing the crash.
   - Used monitoring tools to track memory usage and prevent memory leaks.
 
-### Challenge 3: Connectivity Issues Between Frontend and Backend
+### Challenge 4: Connectivity Issues Between Frontend and Backend
 
 - **Problem**: The React frontend was unable to communicate with the Flask backend.
 - **Solution**:
