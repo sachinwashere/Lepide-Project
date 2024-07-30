@@ -1,0 +1,19 @@
+2024-07-30 17:17:38 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.12:5000
+2024-07-30 17:17:38 INFO: [33mPress CTRL+C to quit[0m
+2024-07-30 17:17:38 INFO:  * Restarting with stat
+2024-07-30 17:17:43 WARNING:  * Debugger is active!
+2024-07-30 17:17:43 INFO:  * Debugger PIN: 467-434-195
+2024-07-30 17:29:10 INFO: File requirements (2).txt uploaded and summarized successfully
+2024-07-30 17:29:10 INFO: 127.0.0.1 - - [30/Jul/2024 17:29:10] "POST /upload HTTP/1.1" 200 -
+2024-07-30 17:29:34 INFO: 127.0.0.1 - - [30/Jul/2024 17:29:34] "OPTIONS /summarize HTTP/1.1" 200 -
+2024-07-30 17:29:37 INFO: Text summarized successfully
+2024-07-30 17:29:37 INFO: 127.0.0.1 - - [30/Jul/2024 17:29:37] "POST /summarize HTTP/1.1" 200 -
+2024-07-30 17:30:14 INFO: 127.0.0.1 - - [30/Jul/2024 17:30:14] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+2024-07-30 17:31:17 INFO: File Superman.txt uploaded and summarized successfully
+2024-07-30 17:31:17 INFO: 127.0.0.1 - - [30/Jul/2024 17:31:17] "POST /upload HTTP/1.1" 200 -
+2024-07-30 17:31:28 INFO: 127.0.0.1 - - [30/Jul/2024 17:31:28] "OPTIONS /summarize HTTP/1.1" 200 -
+2024-07-30 17:31:34 INFO: Text summarized successfully
+2024-07-30 17:31:34 INFO: 127.0.0.1 - - [30/Jul/2024 17:31:34] "POST /summarize HTTP/1.1" 200 -
